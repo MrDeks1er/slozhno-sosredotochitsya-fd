@@ -40,7 +40,7 @@
   border-block-end: 1px solid var(--decoration-color);
 }
 
-.header__decoration-dark {  
+.header__decoration-dark {
   position: absolute;
   display: flex;
   justify-self: end;
@@ -217,15 +217,25 @@
   gap: 20px;
 }
 
-.image__gallery:nth-child(1) { grid-area: sunset; }
+.image__gallery:nth-child(1) {
+  grid-area: sunset;
+}
 
-.image__gallery:nth-child(2) { grid-area: ice; }
+.image__gallery:nth-child(2) {
+  grid-area: ice;
+}
 
-.image__gallery:nth-child(3) { grid-area: tape; }
+.image__gallery:nth-child(3) {
+  grid-area: tape;
+}
 
-.image__gallery:nth-child(4) { grid-area: books; }
+.image__gallery:nth-child(4) {
+  grid-area: books;
+}
 
-.image__gallery:nth-child(5) { grid-area: street; }
+.image__gallery:nth-child(5) {
+  grid-area: street;
+}
 
 .image__gallery {
   object-fit: cover;

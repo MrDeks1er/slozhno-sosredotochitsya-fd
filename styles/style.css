@@ -1,7 +1,6 @@
 * {
   font-family: var(--main-font-family);
   font-weight: var(--main-font-weight);
-  font-size: var(--main-font-size);
   line-height: var(--line-height);
 }
 
@@ -45,6 +44,7 @@
   display: flex;
   justify-self: end;
   align-self: start;
+  font-size: var(--main-font-size);
   margin-top: var(--main-margin);
   margin-right: var(--main-margin);
   color: var(--main-color);
@@ -77,10 +77,10 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   padding-top: 20px;
-  
 }
 
 .header__theme-menu-button {
+  font-size: var(--main-font-size);
   min-width: 70px;
   height: 26px;
   border: var(--border);
@@ -123,7 +123,7 @@
 }
 
 .title-decor {
-  margin-bottom: 10px;
+  font-size: var(--main-font-size);
   color: var(--title-color);
   font-weight: var(--bold-font-weight);
   background-color: var(--main-color);
@@ -141,12 +141,14 @@
 .info__block {
   display: grid;
   grid-template-columns: 1fr 2fr;
+  row-gap: 10px;
 }
 
 .info__title {
   max-width: 315px;
   color: var(--left-title-color);
   font-weight: var(--bold-font-weight);
+  font-size: var(--main-font-size);
 }
 
 .info__content {
@@ -154,15 +156,20 @@
 }
 
 .content__title {
+  font-size: var(--main-font-size);
   font-weight: var(--main-font-weight);
+  color: var(--title-color);
+  background-color: var(--main-color);
+  margin-bottom: 10px;
 }
 
 .info__content p:not(:last-child) {
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
 
 .content__text {
   color: var(--text-color);
+  font-size: var(--main-font-size);
 }
 
 .info__block--column {
@@ -170,22 +177,25 @@
 }
 
 .info__block--column .info__content {
-  padding-top: 10px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 20px;
+  row-gap: 0;
+  padding-top: 20px;
+  padding-left: 0;
 }
 
 .info__block--column h3 {
   grid-row: 1;
+  max-width: 315px;
 }
 
 .info__block--column p {
   grid-row: 2;
 }
 
-.info__block--column .info__content {
-  padding-left: 0;
+.five-rules {
+  margin-bottom: 20px;
 }
 
 .info__link {
@@ -207,13 +217,17 @@
   padding: 80px 0 60px 0;
 }
 
+.image_title {
+  margin-bottom: 0;
+}
+
 .image__content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-areas:
     "sunset sunset ice"
     "tape books ice"
-    "tape street street"; 
+    "tape street street";
   gap: 20px;
 }
 
@@ -252,16 +266,17 @@
 
 .footer__title {
   color: var(--header-title-color);
+  font-weight: var(--bold-font-weight);
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   line-height: 83%;
   text-shadow: 2px 2px 0 var(--decoration-color);
 }
 
-@media (min-width: 768px) and (max-width: 1023px)  {
+@media (min-width: 768px) and (max-width: 1023px) {
   .header__theme-menu-list {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 1fr);
-    padding-top: 0;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  padding-top: 0;
   }
 
   .header__theme-menu {
@@ -269,6 +284,14 @@
   align-content: center;
   margin-inline-end: 20px;
   margin-block-start: 20px;
+  }
+  
+  .header__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem) !important;
+  }
+
+  .header__text {
+  max-width: 364px;
   }
 
   .info__title {
@@ -285,11 +308,12 @@
   }
 
   .info__block--column .info__content {
+  display: block;
   padding-left: 0;
   }
 
-  .header__text {
-  max-width: 364px;
+  .info__block--column h3 {
+  max-width: 100%;
   }
 }
 
@@ -314,7 +338,7 @@
   }
 
   .header__theme-menu-list {
-  grid-template-columns: 1fr; 
+  grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 1fr);
   padding-top: 0;
   }
@@ -334,10 +358,9 @@
   .header__text {
   justify-self: center;
   margin-inline-end: 0;
-  margin-block-start: -16px;
   }
 
-  .main{
+  .main {
   padding: 40px 0;
   }
 
@@ -349,6 +372,10 @@
   display: block;
   }
 
+  .info__block--column .info__content {
+  display: block;
+  }
+
   .info__title {
   justify-self: center;
   max-width: 355px;
@@ -356,7 +383,11 @@
   }
 
   .info__content {
-  padding: 0 10px;
+  padding: 0 10px !important;
+  }
+
+  .content__title {
+  min-width: 355px;
   }
 
   .title-decor {
@@ -364,7 +395,8 @@
   }
 
   .image__block {
-  padding: 50px 10px 40px 10px;
+  gap: 10px;
+  padding: 50px 10px 0 10px;
   }
 
   .image__content {
@@ -375,5 +407,14 @@
   "tape"
   "books"
   "street";
+  gap: 10px;
+  }
+
+  .footer {
+    min-height: 668px;
+  }
+
+  .footer__title {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   }
 }

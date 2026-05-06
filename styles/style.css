@@ -39,31 +39,6 @@
   border-block-end: 1px solid var(--decoration-color);
 }
 
-.header__decoration-dark {
-  position: absolute;
-  display: flex;
-  justify-self: end;
-  align-self: start;
-  font-size: var(--main-font-size);
-  margin-top: var(--main-margin);
-  margin-right: var(--main-margin);
-  color: var(--main-color);
-  line-height: 25px;
-  text-transform: uppercase;
-}
-
-.header__decoration-dark::after {
-  content: '';
-  width: 9px;
-  height: 9px;
-  margin-inline-start: 10px;
-  margin-inline-end: 10px;
-  margin-block-start: 8px;
-  border-radius: 50%;
-  box-shadow: 0 0 4px 2px var(--main-color);
-  background-color: var(--main-color);
-}
-
 .header {
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
@@ -85,7 +60,7 @@
   height: 26px;
   border: var(--border);
   padding: 0 13px;
-  color: var(--main-color);
+  color: var(--decoration-color);
   line-height: 18px;
   text-transform: lowercase;
   background-color: transparent;
@@ -97,11 +72,12 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  border-bottom: 1px solid var(--main-color);
+  outline: none;
+  border-bottom: 1px solid var(--decoration-color);
 }
 
 .header__theme-menu-button_active {
-  border: 1px solid var(--main-color);
+  border: 1px solid var(--decoration-color);
   pointer-events: none;
 }
 
@@ -111,7 +87,7 @@
   font-weight: var(--bold-font-weight);
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   line-height: 83%;
-  text-shadow: 4px 4px 0 var(--decoration-color);
+  text-shadow: 4px 4px 0 var(--main-color);
 }
 
 .header__text {
@@ -130,12 +106,9 @@
 }
 
 .main {
-  padding: 60px 20px 0 20px;
-}
-
-.info {
   display: grid;
   gap: 80px;
+  padding: 60px 20px;
 }
 
 .info__block {
@@ -157,7 +130,7 @@
 
 .content__title {
   font-size: var(--main-font-size);
-  font-weight: var(--main-font-weight);
+  font-weight: var(--bold-font-weight);
   color: var(--title-color);
   background-color: var(--main-color);
   margin-bottom: 10px;
@@ -180,14 +153,12 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  row-gap: 0;
   padding-top: 20px;
   padding-left: 0;
 }
 
 .info__block--column h3 {
   grid-row: 1;
-  max-width: 315px;
 }
 
 .info__block--column p {
@@ -198,23 +169,27 @@
   margin-bottom: 20px;
 }
 
+.info__content h4 {
+  font-weight: var(--main-font-weight);
+}
+
 .info__link {
   text-decoration: none;
   text-shadow: 2px 2px 0 var(--link-color);
 }
 
 .info__link:hover {
-  border-bottom: 1px solid #F1B2CE;
+  border-bottom: 1px solid var(--text-color);
 }
 
-.info__link:focus {
-  border: 1px solid #F1B2CE;
+.info__link:focus-visible {
+  outline: none;
+  border: 1px solid var(--text-color);
 }
 
 .image__block {
   display: grid;
   gap: 20px;
-  padding: 80px 0 60px 0;
 }
 
 .image_title {
@@ -272,7 +247,7 @@
   text-shadow: 2px 2px 0 var(--decoration-color);
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (width <= 1023px) {
   .header__theme-menu-list {
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 1fr);
@@ -287,7 +262,7 @@
   }
   
   .header__title {
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem) !important;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
   .header__text {
@@ -308,8 +283,8 @@
   }
 
   .info__block--column .info__content {
-  display: block;
-  padding-left: 0;
+    gap: 20px;
+    grid-template-columns: 1fr;
   }
 
   .info__block--column h3 {
@@ -317,7 +292,7 @@
   }
 }
 
-@media (min-width: 375px) and (max-width: 767px) {
+@media (width <= 767px) {
   .header {
   min-height: 668px;
   }
@@ -346,11 +321,12 @@
   .header__theme-menu {
   justify-self: end;
   align-content: start;
-  padding: 75px 10px 0 0;
+  padding-top: 75px;
+  margin-inline-end: 10px;
+  margin-block-start: 0;
   }
 
   .header__title {
-  padding-top: 10px;
   padding-left: 10px;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   }
@@ -361,10 +337,8 @@
   }
 
   .main {
-  padding: 40px 0;
-  }
-
-  .info {
+  padding: 40px 10px;
+  display: grid;
   gap: 50px;
   }
 
@@ -373,21 +347,16 @@
   }
 
   .info__block--column .info__content {
-  display: block;
+  padding-top: 0;
   }
 
   .info__title {
-  justify-self: center;
   max-width: 355px;
   padding-bottom: 20px;
   }
 
   .info__content {
-  padding: 0 10px !important;
-  }
-
-  .content__title {
-  min-width: 355px;
+    padding-left: 0;
   }
 
   .title-decor {
@@ -396,7 +365,7 @@
 
   .image__block {
   gap: 10px;
-  padding: 50px 10px 0 10px;
+  padding-bottom: 0;
   }
 
   .image__content {

@@ -6,15 +6,8 @@
 
 :root.theme-dark {
   --background-image: url(../images/cover-image-dark.png);
-  --main-font-family: 'IBM Plex Mono', monospace;
-  --main-font-size: 18px;
-  --main-font-weight: 400;
-  --bold-font-weight: 700;
-  --line-height: 23.4px;
   --background-color: #000028;
   --decoration-color: #FF0070;
-  --main-margin: 20px;
-  --border: 1px solid transparent;
   --header-title-color: #DB00FF;
   --title-color: #000028;
   --text-color: #F1B2CE;
@@ -25,7 +18,6 @@
   --button-hover: rgb(255, 0, 112,0.4);
   .header__decoration-dark {
   position: absolute;
-  display: flex;
   justify-self: end;
   align-self: start;
   font-size: var(--main-font-size);
@@ -34,17 +26,5 @@
   color: var(--main-color);
   line-height: 25px;
   text-transform: uppercase;
-}
-
-.header__decoration-dark::after {
-  content: '';
-  width: 9px;
-  height: 9px;
-  margin-inline-start: 10px;
-  margin-inline-end: 10px;
-  margin-block-start: 8px;
-  border-radius: 50%;
-  box-shadow: 0 0 4px 2px var(--main-color);
-  background-color: var(--main-color);
 }
 }

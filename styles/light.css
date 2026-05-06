@@ -22,9 +22,11 @@
   --header-title-color: #FFC2E6;
   --text-color: #353430;
   --left-title-color: #353430;
+  --title-color: #353430;
   --link-color: #FF8DCB;
   --decoration-color: #353430;
   --background-color: #FFF1F7;
+  --button-hover: rgba(50, 49, 45, 0.4);
   --accent-color: var(--main-color);
   .header__decoration-dark {
     display: none;

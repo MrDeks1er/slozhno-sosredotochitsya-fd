@@ -14,6 +14,8 @@
   --left-title-color: #FF0070;
   --main-color: #FF0070;
   --link-color: #FF0070;
-  --text-padding: 10px 20px 20px 0;
   --button-hover: rgb(255, 0, 112,0.4);
+  .header__decoration-dark {
+  display: flex;
+}
 }

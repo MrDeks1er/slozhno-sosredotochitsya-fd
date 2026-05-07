@@ -16,15 +16,4 @@
   --link-color: #FF0070;
   --text-padding: 10px 20px 20px 0;
   --button-hover: rgb(255, 0, 112,0.4);
-  .header__decoration-dark {
-  position: absolute;
-  justify-self: end;
-  align-self: start;
-  font-size: var(--main-font-size);
-  margin-top: var(--main-margin);
-  margin-right: var(--main-margin);
-  color: var(--main-color);
-  line-height: 25px;
-  text-transform: uppercase;
-}
 }

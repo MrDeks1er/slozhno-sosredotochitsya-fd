@@ -41,6 +41,15 @@
 
 .header__decoration-dark {
   display: flex;
+  position: absolute;
+  justify-self: end;
+  align-self: start;
+  font-size: var(--main-font-size);
+  margin-top: var(--main-margin);
+  margin-right: var(--main-margin);
+  color: var(--main-color);
+  line-height: 25px;
+  text-transform: uppercase;
 }
 
 .header__decoration-dark::after {
